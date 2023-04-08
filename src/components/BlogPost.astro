@@ -1,0 +1,26 @@
+---
+const {url, header, description} = Astro.props;
+---
+
+<style>
+    .posts h1{
+        margin-top: 2rem;
+        margin-bottom: 0;
+        font-size: 1.8rem;
+    }
+    .posts p {
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+</style>
+
+<li class="posts">
+    <a href={url} >
+        <h1>
+            {header}
+        </h1>
+        <p>
+            {description}
+        </p>
+    </a>
+</li>

@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const allPosts = await Astro.glob("../*.md")
+const allTags = allPosts.map(post => post.frontmatter.tags)
+const flatTags = allTags.flat()
+const uniqueTags = [... new Set(flatTags)]
+
+---
+
+<BaseLayout pageTitle="Tags home page" >
+    <h2>From here you can access all pages via tag</h2>
+
+    <ul>
+        {uniqueTags.map( tag => <li>{tag}</li> )}
+    </ul>
+</BaseLayout>
